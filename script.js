@@ -181,7 +181,6 @@ function filterProducts(type, btn) {
     renderMenu(type);
 
     const menu = document.getElementById('menu');
-    // Учитываем высоту шапки (~80px) и фильтров (~60px) = 140px
     const offset = 140;
     const elementPosition = menu.getBoundingClientRect().top;
     const offsetPosition = elementPosition + window.pageYOffset - offset;
@@ -199,8 +198,7 @@ const modalContent = document.getElementById('modalContent');
 
 function openModal(id) {
     const p = products.find(i => i.id === id);
-    // Обратите внимание: кнопка закрытия теперь статична в HTML,
-    // здесь мы меняем только контент
+
     modalContent.innerHTML = `
                 <div class="modal-img-container">
                     <img src="${p.img}" alt="${p.name}">
@@ -252,7 +250,7 @@ function addToCart(id) {
     animateCartIcon();
 }
 
-// УДАЛЕНИЕ ТОВАРА ПОЛНОСТЬЮ
+
 function removeFromCart(id) {
     cart = cart.filter(c => c.id !== id);
     renderCart();
