@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Ninjago Sushi | Легендарная доставка</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto:wght@300;400;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="loader-wrapper" id="loader">
+        <div class="gate-logo">
+            МАСТЕРСТВО<br>ВКУСА
+        </div>
+        <div class="gate-panel gate-left"></div>
+        <div class="gate-panel gate-right"></div>
+    </div>
+
+    <header>
+        <div class="logo brand-font">Ninjago <span>Sushi</span></div>
+        <div class="cart-icon-wrap" onclick="toggleCart()">
+            <i class="fas fa-shopping-bag"></i>
+            <div class="cart-badge" id="cartCount">0</div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="brand-font">Вкус, достойный <span>Ниндзя</span></h1>
+            <p>Энергия Стихий в каждом ролле. Собери свою команду.</p>
+            <a href="#menu" class="cta-btn">ОТКРЫТЬ МЕНЮ</a>
+        </div>
+    </section>
+
+    <div class="filters-container">
+        <div class="filters">
+            <button class="filter-btn active" onclick="filterProducts('all', this)">ВСЕ</button>
+            <button class="filter-btn" onclick="filterProducts('rolls', this)">РОЛЛЫ</button>
+            <button class="filter-btn" onclick="filterProducts('baked', this)">ЗАПЕЧЕННЫЕ</button>
+            <button class="filter-btn" onclick="filterProducts('sets', this)">БОЕВЫЕ СЕТЫ</button>
+            <button class="filter-btn" onclick="filterProducts('wok', this)">WOK</button>
+            <button class="filter-btn" onclick="filterProducts('drinks', this)">ЗЕЛЬЯ</button>
+            <button class="filter-btn" onclick="filterProducts('sides', this)">ЗАКУСКИ</button>
+        </div>
+    </div>
+
+    <section id="menu" class="menu-grid">
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="logo brand-font" style="margin-bottom:15px; display:inline-block;">Ninjago
+                    <span>Sushi</span>
+                </div>
+                <p>Мы готовим суши со скоростью Кружитцу. Только свежая рыба, только острые ножи, только кодекс чести.
+                </p>
+            </div>
+            <div class="footer-col">
+                <h3>Навигация</h3>
+                <a href="#">О нас</a>
+                <a href="#">Доставка и оплата</a>
+                <a href="#">Акции клана</a>
+                <a href="#">Кодекс Ниндзя</a>
+            </div>
+            <div class="footer-col">
+                <h3>Контакты</h3>
+                <p><i class="fas fa-map-marker-alt" style="color:var(--ninja-red)"></i> Храм Спин-джитсу, гора, 1</p>
+                <p><i class="fas fa-phone" style="color:var(--ninja-red)"></i> +380 (99) NIN-JA-GO</p>
+                <div class="socials">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-telegram-plane"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 Ninjago Sushi Demo. Created by AI Programmer. Не является публичной офертой.
+        </div>
+    </footer>
+
+    <div class="modal-overlay" id="productModal" onclick="if(event.target === this) closeModal()">
+        <button class="close-modal-fab" onclick="closeModal()">&times;</button>
+        <div class="modal-content" id="modalContent">
+        </div>
+    </div>
+
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2 class="brand-font" style="color:white; margin:0;">СВИТОК ЗАКАЗА</h2>
+            <button onclick="toggleCart()"
+                style="background:none; border:none; color:white; font-size:1.5rem;">&times;</button>
+        </div>
+        <div class="cart-body" id="cartBody">
+        </div>
+        <div class="cart-footer">
+            <div
+                style="display:flex; justify-content:space-between; color:var(--ninja-gold); font-size:1.2rem; margin-bottom:15px; font-weight:bold; font-family:'Bangers'; letter-spacing:1px;">
+                <span>Итого:</span>
+                <span id="cartTotal">0 грн</span>
+            </div>
+            <button class="checkout-btn" onclick="checkout()">ОТПРАВИТЬ ГОЛУБЯ</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
